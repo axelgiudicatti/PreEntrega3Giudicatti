@@ -89,7 +89,7 @@ const pagocredito = () => {
     localStorage.setItem("numeropedido", JSON.stringify(idpedido));
     localStorage.setItem("birras", JSON.stringify(carrito));
     localStorage.setItem("pedido", JSON.stringify(pedido));
-    window.location.href = "../puntayhacha.html";
+    window.location.href = "../index.html";
   });
 };
 
@@ -134,4 +134,4 @@ carrito.forEach((item) => {
 });
 pagocredito();
 pagomp("#mercadopago", "https://www.mercadopago.com.ar/");
-pagomp("#pagar", "../puntayhacha.html");
+pagomp("#pagar", "../index.html");
