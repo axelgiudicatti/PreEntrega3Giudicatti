@@ -117,13 +117,13 @@ const verCarrito = ({ estilo, precio, cantidad }) => {
     ` y te llevas ` +
     cantidadtotal +
     ` latas </h2>
-    <form action="../pages/checkout.html">
+    <form action="pages/checkout.html">
     <button type="submit" class="modify color--state-ok pagar"> Ir a Checkout </button>
     </form> `;
   let carrito = document.getElementById(`carrito${estilo}`);
   carrito.className = "carrito";
   carrito.innerHTML = `
-        <img src="../imgs/${estilo}.webp.png" class="carritoimg" />
+        <img src="imgs/${estilo}.webp.png" class="carritoimg" />
         <h3>${estilo}</h3>
         <h4>$${precio}/lata</h4>
         <h4>${cantidad} unidades</h4>
