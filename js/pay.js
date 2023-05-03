@@ -62,7 +62,6 @@ function calculartotales() {
 
 let pedido = JSON.parse(localStorage.getItem("pedido")) ?? [];
 let idpedido = JSON.parse(localStorage.getItem("numeropedido")) ?? 0;
-
 let pedidosconfirmados = JSON.parse(localStorage.getItem("confirmados")) ?? [];
 
 const pagocredito = () => {
@@ -94,8 +93,8 @@ const pagocredito = () => {
   });
 };
 
-const pagomp = () => {
-  let mpzone = document.querySelector("#mercadopago");
+const pagomp = (x, y) => {
+  let mpzone = document.querySelector(x);
   mpzone.addEventListener("click", (e) => {
     e.preventDefault();
     idpedido++;
@@ -113,30 +112,7 @@ const pagomp = () => {
     localStorage.setItem("numeropedido", JSON.stringify(idpedido));
     localStorage.setItem("birras", JSON.stringify(carrito));
     localStorage.setItem("pedido", JSON.stringify(pedido));
-    window.location.href = "https://www.mercadopago.com.ar/";
-  });
-};
-
-const bancario = () => {
-  let bank = document.querySelector("#pagar");
-  bank.addEventListener("click", (e) => {
-    e.preventDefault();
-    idpedido++;
-    pedidoconf = pedido;
-    pedidosconfirmados.push(pedidoconf);
-    localStorage.setItem("confirmados", JSON.stringify(pedidosconfirmados));
-    pedido = [];
-    datos = [];
-    carrito = [
-      { cantidad: 0 },
-      { cantidad: 0 },
-      { cantidad: 0 },
-      { cantidad: 0 },
-    ];
-    localStorage.setItem("numeropedido", JSON.stringify(idpedido));
-    localStorage.setItem("birras", JSON.stringify(carrito));
-    localStorage.setItem("pedido", JSON.stringify(pedido));
-    window.location.href = "../puntayhacha.html";
+    window.location.href = y;
   });
 };
 
@@ -157,5 +133,5 @@ carrito.forEach((item) => {
   totalCarrito(item);
 });
 pagocredito();
-pagomp();
-bancario();
+pagomp("#mercadopago", "https://www.mercadopago.com.ar/");
+pagomp("#pagar", "../puntayhacha.html");
