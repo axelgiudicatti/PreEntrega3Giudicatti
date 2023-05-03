@@ -123,7 +123,7 @@ const verCarrito = ({ estilo, precio, cantidad }) => {
   let carrito = document.getElementById(`carrito${estilo}`);
   carrito.className = "carrito";
   carrito.innerHTML = `
-        <img src="../imgs/${estilo}.webp.png" class="carritoimg" />
+        <img src="imgs/${estilo}.webp.png" class="carritoimg" />
         <h3>${estilo}</h3>
         <h4>$${precio}/lata</h4>
         <h4>${cantidad} unidades</h4>
